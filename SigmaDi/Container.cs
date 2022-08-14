@@ -60,12 +60,20 @@ namespace SigmaDi
                 data = reader.ReadToEnd();
             }
 
-            var services = JsonConvert.DeserializeObject<Dictionary<string, string>>(data);
+            var services = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(data);
 
             foreach (var service in services)
             {
-                var interfaceType = Type.GetType(service.Key);
-                var type = Type.GetType(service.Value);
+                RegisterServicesByAssembly(service.Key, service.Value);
+            }
+        }
+
+        private void RegisterServicesByAssembly(string assemblyName, Dictionary<string, string> services)
+        {
+            foreach (var service in services)
+            {
+                var interfaceType = Type.GetType($"{assemblyName}.{service.Key}, {assemblyName}");
+                var type = Type.GetType($"{assemblyName}.{service.Value}, {assemblyName}");
                 var instance = GetInstance(type);
 
                 _services.Add(interfaceType, instance);
