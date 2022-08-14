@@ -2,7 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Egor Sychev</Authors>
+    <Description>Di container</Description>
+    <PackageIcon>SigmaDi.png</PackageIcon>
+    <RepositoryUrl>https://github.com/sigmade/SigmaDi</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/sigmade/SigmaDi</PackageProjectUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Admin501\Desktop\nuget\SigmaDi.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
