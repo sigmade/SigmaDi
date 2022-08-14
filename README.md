@@ -1,4 +1,5 @@
-# SigmaDi
+# SigmaDi ![SigmaDi](https://user-images.githubusercontent.com/55326490/184547935-508f53e4-7f2f-47c9-8b07-45be939e916c.png)
+
 
 Registration services from code 
 
