@@ -1,6 +1,5 @@
 # SigmaDi
 
-------
 Registration services from code 
 
 ``` C#
