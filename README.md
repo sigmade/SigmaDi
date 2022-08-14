@@ -40,6 +40,6 @@ NuGet Package Manager
 .NET CLI
 
 ```powershell
-dotnet add package ValidatorExtens
+dotnet add package SigmaDi
 ```
-[Go to nuget.org](https://www.nuget.org/packages/ValidatorExtens/)
+[Go to nuget.org](https://www.nuget.org/packages/SigmaDi/)
