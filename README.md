@@ -19,11 +19,11 @@ and file
 
 ``` JSON
 {
-  "AppAssemply": {
+  "AppAssembly": {
     "IDataService": "DataService",
     "MainController": "MainController"
   },
-  "DataAssemply": {
+  "DataAssembly": {
     "IService": "Service",
     "ILogger": "Logger"
   }
