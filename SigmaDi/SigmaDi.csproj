@@ -7,9 +7,15 @@
     <PackageIcon>SigmaDi.png</PackageIcon>
     <RepositoryUrl>https://github.com/sigmade/SigmaDi</RepositoryUrl>
     <PackageProjectUrl>https://github.com/sigmade/SigmaDi</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="C:\Users\Admin501\Desktop\nuget\SigmaDi.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
