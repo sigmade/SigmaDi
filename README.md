@@ -1,4 +1,4 @@
-# ![image](https://user-images.githubusercontent.com/55326490/184547950-0403178a-8171-4767-a532-2a673b688672.png) SigmaDi
+# ![image](https://user-images.githubusercontent.com/55326490/184547959-704433bc-03b9-4cb6-b6b4-5fdc106d6b2e.png) SigmaDi
 
 
 Registration services from code 
