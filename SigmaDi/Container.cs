@@ -8,6 +8,7 @@ namespace SigmaDi
 {
     public class Container
     {
+        private readonly Dictionary<Type, Type> _servicesType = new Dictionary<Type, Type>();
         private readonly Dictionary<Type, object> _services = new Dictionary<Type, object>();
 
         public Container(string servicesFile)
@@ -17,8 +18,16 @@ namespace SigmaDi
 
         public void AddNew<TInterface, TImplement>() where TImplement : TInterface
         {
-            var instanceService = GetInstance(typeof(TImplement));
-            _services.Add(typeof(TInterface), instanceService);
+            _servicesType.Add(typeof(TInterface), typeof(TImplement));
+        }
+
+        public void CreateDependencies()
+        {
+            foreach (var service in _servicesType)
+            {
+                var instanceService = GetInstance(service.Value);
+                _services.Add(service.Key, instanceService);
+            }
         }
 
         public object GetInstance(Type type)
@@ -30,6 +39,10 @@ namespace SigmaDi
             else if (!type.IsAbstract)
             {
                 return CreateInstance(type);
+            }
+            else if (_servicesType.TryGetValue(type, out var typeService))
+            {
+                return CreateInstance(typeService);
             }
             throw new Exception($"Failed registration: {type}");
         }
@@ -74,9 +87,8 @@ namespace SigmaDi
             {
                 var interfaceType = Type.GetType($"{assemblyName}.{service.Key}, {assemblyName}");
                 var type = Type.GetType($"{assemblyName}.{service.Value}, {assemblyName}");
-                var instance = GetInstance(type);
 
-                _services.Add(interfaceType, instance);
+                _servicesType.Add(interfaceType, type);
             }
         }
     }
