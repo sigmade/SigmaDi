@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaDi", "SigmaDi\SigmaDi.csproj", "{C2B0210E-1C6D-46D5-9E0D-19DCB3641D2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigmaDi", "SigmaDi\SigmaDi.csproj", "{C2B0210E-1C6D-46D5-9E0D-19DCB3641D2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaDiTests", "SigmaDiTests\SigmaDiTests.csproj", "{78A57AA0-C746-4CFC-95B7-56333A20A570}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C2B0210E-1C6D-46D5-9E0D-19DCB3641D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2B0210E-1C6D-46D5-9E0D-19DCB3641D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2B0210E-1C6D-46D5-9E0D-19DCB3641D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78A57AA0-C746-4CFC-95B7-56333A20A570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A57AA0-C746-4CFC-95B7-56333A20A570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A57AA0-C746-4CFC-95B7-56333A20A570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A57AA0-C746-4CFC-95B7-56333A20A570}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

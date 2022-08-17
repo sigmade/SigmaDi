@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SigmaDi.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,12 +17,17 @@ namespace SigmaDi
             RegisterByFile(servicesFile);
         }
 
+        public Container()
+        {
+
+        }
+
         public void AddNew<TInterface, TImplement>() where TImplement : TInterface
         {
             _servicesType.Add(typeof(TInterface), typeof(TImplement));
         }
 
-        public void CreateDependencies()
+        public void Init()
         {
             foreach (var service in _servicesType)
             {
@@ -44,7 +50,7 @@ namespace SigmaDi
             {
                 return CreateInstance(typeService);
             }
-            throw new Exception($"Failed registration: {type}");
+            throw new SigmaDiException($"Failed registration: {type}");
         }
 
         private object CreateInstance(Type type)
