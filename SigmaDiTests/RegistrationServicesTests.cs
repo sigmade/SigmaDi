@@ -1,4 +1,5 @@
 ﻿using SigmaDi;
+using SigmaDi.Exceptions;
 using SigmaDiTests.FakeData;
 using Xunit;
 
@@ -19,6 +20,18 @@ namespace SigmaDiTests
             
             // Assert
             Assert.Null(exception);
+        }
+
+        [Fact]
+        public void Throw_Exception_When_Two_Constructors_With_Params()
+        {
+            // Arrange
+            var container = new Container();
+            container.AddNew<IBusinessLayer, BusinessLayer>();
+            container.AddNew<IDataProvider, TwoConstructor>();
+
+            // Act Assert
+            Assert.Throws<SigmaDiException>(() => container.Init());
         }
     }
 }

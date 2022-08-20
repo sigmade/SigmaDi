@@ -13,6 +13,24 @@
         }
     }
 
+    public class TwoConstructor : IDataProvider
+    {
+        public TwoConstructor(string val)
+        {
+
+        }
+
+        public TwoConstructor(int val)
+        {
+
+        }
+
+        public string GetProduct()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
     public interface IBusinessLayer
     {
         string GetProductName();

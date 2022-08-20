@@ -55,7 +55,14 @@ namespace SigmaDi
 
         private object CreateInstance(Type type)
         {
-            var ctor = type.GetConstructors().Single();
+            var ctors = type.GetConstructors().Where(c => c.IsPublic && c.GetParameters().Count() > 0);
+
+            if (ctors.Count() > 1)
+            {
+                throw new SigmaDiException($"More than one public constructor with parameters is not allowed: {type}");
+            }
+
+            var ctor = type.GetConstructors().FirstOrDefault();
             var ctorParamsInfo = ctor.GetParameters();
             var ctorParamTypes = ctorParamsInfo.Select(p => p.ParameterType);
             var ctorParamInstances = new List<object>();
